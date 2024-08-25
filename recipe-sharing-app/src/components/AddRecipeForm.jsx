@@ -29,8 +29,7 @@ const AddRecipeForm = () => {
       </div>
       <div>
         <label htmlFor="ingredients">Ingredients:</label>
-        <input
-          type="text"
+        <textarea
           id="ingredients"
           value={ingredients}
           onChange={(e) => setIngredients(e.target.value)}

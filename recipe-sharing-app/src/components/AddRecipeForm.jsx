@@ -1,31 +1,41 @@
-import { useState } from 'react';
-import useRecipeStore from '../recipeStore';
+// src/components/AddRecipeForm.jsx
+import React, { useState } from 'react';
+import useRecipeStore from './recipeStore';
 
 const AddRecipeForm = () => {
-  const addRecipe = useRecipeStore(state => state.addRecipe);
   const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
+  const [ingredients, setIngredients] = useState('');
+  const addRecipe = useRecipeStore((state) => state.addRecipe);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    addRecipe({ id: Date.now(), title, description });
-    setTitle('');
-    setDescription('');
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (title && ingredients) {
+      addRecipe({ title, ingredients });
+      setTitle('');
+      setIngredients('');
+    }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        placeholder="Title"
-      />
-      <textarea
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-        placeholder="Description"
-      />
+      <div>
+        <label htmlFor="title">Title:</label>
+        <input
+          type="text"
+          id="title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+      </div>
+      <div>
+        <label htmlFor="ingredients">Ingredients:</label>
+        <input
+          type="text"
+          id="ingredients"
+          value={ingredients}
+          onChange={(e) => setIngredients(e.target.value)}
+        />
+      </div>
       <button type="submit">Add Recipe</button>
     </form>
   );

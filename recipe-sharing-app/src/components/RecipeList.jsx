@@ -5,6 +5,7 @@ const RecipeList = () => {
   const recipes = useRecipeStore((state) => state.filteredRecipes);
   const filterRecipes = useRecipeStore((state) => state.filterRecipes);
 
+  // Trigger filtering when recipes or search term changes
   useEffect(() => {
     filterRecipes();
   }, [filterRecipes]);

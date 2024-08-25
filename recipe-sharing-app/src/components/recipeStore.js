@@ -2,6 +2,7 @@ import create from 'zustand';
 
 const useRecipeStore = create((set) => ({
   recipes: [],
+  searchTerm: '', // State for storing the search term
 
   // Function to set the entire list of recipes
   setRecipes: (newRecipes) => set({ recipes: newRecipes }),
@@ -20,6 +21,16 @@ const useRecipeStore = create((set) => ({
   updateRecipe: (updatedRecipe) => set((state) => ({
     recipes: state.recipes.map((recipe) =>
       recipe.id === updatedRecipe.id ? updatedRecipe : recipe
+    )
+  })),
+
+  // Function to set the search term
+  setSearchTerm: (term) => set({ searchTerm: term }),
+
+  // Compute filtered recipes based on the search term
+  filteredRecipes: () => set((state) => ({
+    filteredRecipes: state.recipes.filter(recipe =>
+      recipe.title.toLowerCase().includes(state.searchTerm.toLowerCase())
     )
   })),
 }));

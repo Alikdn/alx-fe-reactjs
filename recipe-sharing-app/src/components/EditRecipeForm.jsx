@@ -1,32 +1,38 @@
 // src/components/EditRecipeForm.jsx
 import React, { useState } from 'react';
-import { useRecipeStore } from './recipeStore';
+import useRecipeStore from './recipeStore';
 
-const EditRecipeForm = ({ recipe }) => {
-  const [title, setTitle] = useState(recipe.title);
-  const [ingredients, setIngredients] = useState(recipe.ingredients);
-  const updateRecipe = useRecipeStore((state) => state.updateRecipe);
+const EditRecipeForm = ({ recipeId }) => {
+  const { recipes, updateRecipe } = useRecipeStore();
+  const recipe = recipes.find((r) => r.id === recipeId);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    updateRecipe({ ...recipe, title, ingredients });
+  const [title, setTitle] = useState(recipe?.title || '');
+  const [ingredients, setIngredients] = useState(recipe?.ingredients || '');
+
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Update the recipe in the store
+    if (title && ingredients) {
+      updateRecipe(recipeId, { title, ingredients });
+    }
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="edit-title">Title:</label>
+        <label htmlFor="title">Title:</label>
         <input
           type="text"
-          id="edit-title"
+          id="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
       </div>
       <div>
-        <label htmlFor="edit-ingredients">Ingredients:</label>
+        <label htmlFor="ingredients">Ingredients:</label>
         <textarea
-          id="edit-ingredients"
+          id="ingredients"
           value={ingredients}
           onChange={(e) => setIngredients(e.target.value)}
         />

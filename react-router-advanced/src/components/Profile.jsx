@@ -1,20 +1,14 @@
 import React from 'react';
-import { Outlet, Route, Routes } from 'react-router-dom';
-import ProfileDetails from './ProfileDetails';
-import ProfileSettings from './ProfileSettings';
+import { Outlet, Link } from 'react-router-dom';
 
 function Profile() {
   return (
     <div>
       <h2>Profile</h2>
       <nav>
-        <a href="/profile/details">Profile Details</a> | {' '}
-        <a href="/profile/settings">Profile Settings</a>
+        <Link to="details">Profile Details</Link> | {' '}
+        <Link to="settings">Profile Settings</Link>
       </nav>
-      <Routes>
-        <Route path="details" element={<ProfileDetails />} />
-        <Route path="settings" element={<ProfileSettings />} />
-      </Routes>
       <Outlet />
     </div>
   );

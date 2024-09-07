@@ -17,11 +17,9 @@ function TodoList() {
   };
 
   const toggleTodo = (id) => {
-    setTodos(
-      todos.map(todo =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
-    );
+    setTodos(todos.map(todo =>
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+    ));
   };
 
   const deleteTodo = (id) => {
@@ -43,7 +41,7 @@ function TodoList() {
           <li key={todo.id}>
             <span
               onClick={() => toggleTodo(todo.id)}
-              style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
+              style={{ textDecoration: todo.completed ? 'line-through' : 'none', cursor: 'pointer' }}
             >
               {todo.text}
             </span>

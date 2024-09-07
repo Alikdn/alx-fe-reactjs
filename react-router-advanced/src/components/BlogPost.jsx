@@ -12,8 +12,8 @@ function BlogPost() {
     // Fetch blog post data
     const fetchPost = async () => {
       try {
-        const response = await axios.get(https,//jsonplaceholder.typicode.com/posts/${postId});
-        setPost(response.data)) // Ensure no extra characters or syntax errors here
+        const response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}`);
+        setPost(response.data); // Ensure no extra characters or syntax errors here
       } catch (err) {
         setError('Failed to fetch the post');
       } finally {

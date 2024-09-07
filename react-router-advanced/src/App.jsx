@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
 
-// Import your componentss
+// Import your components
 import Home from './components/Home';
 import Profile from './components/Profile';
 import ProfileDetails from './components/ProfileDetails';
@@ -25,7 +25,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/blog/:postId" element={<BlogPost />} />
           <Route
-            path="/profile"
+            path="/profile/*"
             element={
               <ProtectedRoute>
                 <Profile />

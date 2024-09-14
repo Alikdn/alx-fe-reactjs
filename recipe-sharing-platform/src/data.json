@@ -1,14 +1,51 @@
 [
-    {
-      "id": 1,
-      "title": "Spaghetti Carbonara",
-      "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-      "image": "https://via.placeholder.com/150"
-    },
-    {
-      "id": 2,
-      "title": "Chicken Tikka Masala",
-      "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato-based gravy.",
-      "image": "https://via.placeholder.com/150"
-    }
-  ]
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://via.placeholder.com/150",
+    "ingredients": [
+      "Spaghetti",
+      "Eggs",
+      "Pancetta or Bacon",
+      "Pecorino Romano Cheese",
+      "Black Pepper",
+      "Salt"
+    ],
+    "instructions": [
+      "Cook the spaghetti according to package instructions.",
+      "In a bowl, mix eggs and grated Pecorino Romano cheese.",
+      "Fry the pancetta or bacon until crispy.",
+      "Combine the cooked pasta with the pancetta and egg mixture.",
+      "Season with black pepper and salt to taste.",
+      "Serve hot with additional cheese if desired."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato-based gravy.",
+    "image": "https://via.placeholder.com/150",
+    "ingredients": [
+      "Chicken",
+      "Yogurt",
+      "Lemon Juice",
+      "Garlic",
+      "Ginger",
+      "Spices (Cumin, Coriander, Garam Masala)",
+      "Tomato Sauce",
+      "Heavy Cream",
+      "Salt",
+      "Oil"
+    ],
+    "instructions": [
+      "Marinate the chicken in yogurt, lemon juice, garlic, ginger, and spices.",
+      "Grill or bake the marinated chicken until cooked through.",
+      "In a pan, heat oil and sauté garlic and ginger.",
+      "Add tomato sauce and spices, and simmer.",
+      "Add the grilled chicken to the sauce and cook.",
+      "Stir in heavy cream and cook until the sauce thickens.",
+      "Serve with rice or naan bread."
+    ]
+  }
+]

@@ -9,10 +9,11 @@ export const fetchUsers = async (username, location, minRepos) => {
   }
 
   if (minRepos) {
+    // eslint-disable-next-line no-unused-vars
     query += `+repos:>=${minRepos}`;
   }
 
-  const url = `https://api.github.com/search/users?${query}`;
+  const url = `"https://api.github.com/search/users?q"`;
 
   const response = await axios.get(url);
 

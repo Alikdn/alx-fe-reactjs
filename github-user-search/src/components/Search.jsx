@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-import { fetchUsers } from '../services/githubService'; // Import the GitHub API service
+import { fetchUsers } from '../services/githubService'; // Import the correct function from the service
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -17,6 +17,7 @@ const Search = () => {
     setUsers([]); // Clear previous results
 
     try {
+      // Use the fetchUsers function to handle advanced search
       const data = await fetchUsers(searchTerm, location, minRepos);
       setUsers(data.items);
     // eslint-disable-next-line no-unused-vars

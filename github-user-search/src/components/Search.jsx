@@ -19,6 +19,7 @@ const Search = () => {
 
     try {
       // Use the fetchUsers function to handle advanced search
+      // eslint-disable-next-line no-undef
       const data = await fetchUsers(searchTerm, location, minRepos);
       setUsers(data.items);
     // eslint-disable-next-line no-unused-vars

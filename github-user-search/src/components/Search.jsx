@@ -19,7 +19,7 @@ const Search = () => {
       setUserData(data);
     // eslint-disable-next-line no-unused-vars
     } catch (err) {
-      setError("Looks like we can't find the user");
+      setError("Looks like we cant find the user");
     } finally {
       setLoading(false);
     }

@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-import { fetchUsers } from '../services/githubService'; // Import the correct function from the service
+// eslint-disable-next-line no-unused-vars
+import { fetchUserData } from '../services/githubService'; // Import the correct function from the service
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');
